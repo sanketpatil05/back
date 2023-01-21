@@ -38,8 +38,10 @@ const login = async (req, res) => {
 
   bcrypt.compare(password, hashed_pass, function (err, result) {
     if (result) {
+
+       
       const token = jwt.sign({ userId: result1._id }, "sanket");
-      res.send({ msg: "login success", token: token });
+      res.send({ msg: "login success", token: token, user:result1 });
     } else {
       res.send("Login Failed");
     }
