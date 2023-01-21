@@ -1,3 +1,4 @@
+
 const express = require("express");
 const { connection } = require("./config/db");
 const cors = require('cors');
@@ -21,3 +22,5 @@ app.listen(5000, async() => {
       }
       console.log("server started on 5000");
 });
+
+
