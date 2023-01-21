@@ -7,7 +7,7 @@ const User = require("../model/user.model");
 
 mongoose.set("strictQuery", false);
 const signup = async (req, res) => {
-  const { email, password } = req.body;
+  const { name, email, password } = req.body;
 
   bcrypt.hash(password, 5, async function (err, hash) {
     if (err) {
@@ -15,7 +15,7 @@ const signup = async (req, res) => {
     } else {
 
         let data={
-            
+                name:name,
                 email: email,
                 password: hash,
               
